@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: runbnbrails_production
-  username: runbnbrails
-  password: <%= ENV['RUNBNBRAILS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
