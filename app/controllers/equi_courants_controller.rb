@@ -5,8 +5,16 @@ class EquiCourantsController < ApplicationController
   def index
   logement = Logement.find_by(id:params[:logement_id])
   equipement = logement.equi_courants[0].title
+  tables = []
+  o = 0
+  for i in 0...3
+    o+=1
+    tables << equipement[(equipement.count - o)]
+ end
+
      render json: {
-      courant:equipement
+      courant:equipement,
+      tables:tables
     }
   end
 
