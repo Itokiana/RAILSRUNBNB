@@ -20,4 +20,9 @@ class Logement < ApplicationRecord
     has_many :parms_reservations
     has_one  :caution
     has_many :frais_suples
+    has_many :bain_entier
+    has_many :bain_demi
+    has_many :cuisine
+    has_many :kitchenette
+    has_many :espace_repa
 end

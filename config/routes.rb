@@ -10,12 +10,13 @@ Rails.application.routes.draw do
   get "/auto_login", to: "users#auto_login"
 
   resources :logements do
-  resources :chambres, only:[:index,:upadate,:create]
+  resources :chambres, only:[:index,:update,:create]
   resources :photos
+  resources :bain_entiers, only:[:index]
     end
   put '/logements/:logement_id/equi_courants/',to:"equi_courants#update"
   get '/logements/:logement_id/equi_courants/',to:"equi_courants#index"
-
+  
   put '/logements/:logement_id/cautions/',to:"cautions#update"
   get '/logements/:logement_id/cautions/',to:"cautions#index"
 
