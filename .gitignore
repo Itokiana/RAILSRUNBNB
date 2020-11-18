@@ -4,7 +4,6 @@ capybara-*.html
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /db/*.sqlite3-[0-9]*
-/public/system
 /coverage/
 /spec/tmp
 *.orig
@@ -53,9 +52,7 @@ bower.json
 node_modules/
 
 # Ignore precompiled javascript packs
-/public/*
-/public/packs-test
-/public/assets
+/public/uploads/
 
 # Ignore yarn files
 /yarn-error.log
