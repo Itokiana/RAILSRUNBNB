@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_13_064113) do
+ActiveRecord::Schema.define(version: 2020_11_16_165644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,24 @@ ActiveRecord::Schema.define(version: 2020_11_13_064113) do
     t.index ["logement_id"], name: "index_autres_on_logement_id"
   end
 
+  create_table "bain_demis", force: :cascade do |t|
+    t.string "title"
+    t.integer "quantite"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_bain_demis_on_logement_id"
+  end
+
+  create_table "bain_entiers", force: :cascade do |t|
+    t.string "title"
+    t.integer "quantite"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_bain_entiers_on_logement_id"
+  end
+
   create_table "calendriers", force: :cascade do |t|
     t.datetime "startDate"
     t.datetime "endDate"
@@ -120,6 +138,15 @@ ActiveRecord::Schema.define(version: 2020_11_13_064113) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["logement_id"], name: "index_conditions_on_logement_id"
+  end
+
+  create_table "cuisines", force: :cascade do |t|
+    t.string "title"
+    t.integer "quantite"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_cuisines_on_logement_id"
   end
 
   create_table "equi_courants", force: :cascade do |t|
@@ -175,6 +202,15 @@ ActiveRecord::Schema.define(version: 2020_11_13_064113) do
     t.index ["logement_id"], name: "index_equipements_on_logement_id"
   end
 
+  create_table "espace_repas", force: :cascade do |t|
+    t.string "title"
+    t.integer "quantite"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_espace_repas_on_logement_id"
+  end
+
   create_table "frais_suples", force: :cascade do |t|
     t.string "types"
     t.string "montant"
@@ -183,6 +219,15 @@ ActiveRecord::Schema.define(version: 2020_11_13_064113) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["logement_id"], name: "index_frais_suples_on_logement_id"
+  end
+
+  create_table "kitchenettes", force: :cascade do |t|
+    t.string "title"
+    t.integer "quantite"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_kitchenettes_on_logement_id"
   end
 
   create_table "lits", force: :cascade do |t|
