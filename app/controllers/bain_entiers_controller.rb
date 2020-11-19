@@ -7,9 +7,11 @@ class BainEntiersController < ApplicationController
         cuisine = Cuisine.find_by(logement_id: params[:logement_id])
         kit= Kitchenette.find_by(logement_id: params[:logement_id])
 
+        puts "*"*100
+            puts bain_demi
+            puts "*"*100
         render json:{
             bain_demi:bain_demi, bain_entier:bain_entier, cuisine:cuisine, kit:kit
         }
-
     end
 end
