@@ -23,14 +23,7 @@ class ChambresController < ApplicationController
     end
     def create
 
-        bain_entier = BainEntier.create(title:"Salle de bain entière : Toilette, lavabo, douce et baignoire
-                        ",quantite: params[:quantite],logement_id: params[:logement_id])
-        bain_demi = BainDemi.create(title:"Demi-salle de bain : Toilette et lavabo
-                     ",quantite: params[:quantite],logement_id: params[:logement_id])
-         cuisine = Cuisine.create(title:"Cuisine entière
-                    ",quantite: params[:quantite],logement_id: params[:logement_id])
-         kitchenette = Kitchenette.create(title:"Kitchenette : un espace compact pour préparer à manger
-                        ",quantite: params[:quantite],logement_id: params[:logement_id])
+       
         
         if params[:chambre] && (params[:chambre] != 0 || params[:chambre] != "0")
             fin = params[:chambre].to_i 
