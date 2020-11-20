@@ -7,11 +7,13 @@ class ChambresController < ApplicationController
         chambres = logement.chambres
         salons = logement.salons
         autres = logement.autres
+        lits = []
 
-        chambre = Chambre.find_by(logement_id: params[:logement_id])
-        lits = chambre.lits
+        chambres.each do |chambre|
+            lits << chambre.lits    
+        end
 
-
+        
         salon = Salon.find_by(logement_id: params[:logement_id])
         canapes = salon.canapes
 
